@@ -1,0 +1,56 @@
+<div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            Alarm & Buzzer
+        </h1>
+    </div>
+    <div class="setting_section">
+        <div class="col-12">
+            <button [ngClass]="selectedAdzan ? 'btn btn-success catbutton' : 'btn btn-primary catbutton'" (click)="selectCat(1)">Adzan</button>
+        </div>
+        <div class="col-12">
+            <button [ngClass]="selectedAdzan == false ? 'btn btn-success catbutton' : 'btn btn-primary catbutton'" (click)="selectCat(2)">Iqamah</button>
+        </div>
+    </div>
+    <div *ngIf="selectedAdzan">
+        <div class="periods" *ngFor="let period of adzan_periods; let i = index">
+            <div class="col-12">
+                Alarm Waktu {{period.name}}
+            </div>
+            <div class="col-12">
+                <select class="form-control" [(ngModel)]="period.file" (change)="onChange($event, i)">
+                    <option value="{{alarm.file}}" *ngFor="let alarm of alarms">
+                        {{alarm.file}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="!selectedAdzan">
+        <div class="periods" *ngFor="let period of iqamah_periods; let i = index">
+            <div class="col-12">
+                Alarm Waktu {{period.name}}
+            </div>
+            <div class="col-12">
+                <select class="form-control" [(ngModel)]="period.file" (change)="onChange($event, i)">
+                    <option value="{{alarm.file}}" *ngFor="let alarm of alarms">
+                        {{alarm.file}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting_section">
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="updatealarm()">
+                Update
+            </button>
+        </div>
+    </div>
+    
+</div>

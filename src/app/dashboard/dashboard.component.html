@@ -1,0 +1,17 @@
+<div *ngIf="isLoaded">
+    <app-header 
+        [template]="template"
+        [periods]="periods"
+        *ngIf="!isFullScreen"
+    ></app-header>
+    <app-content
+        *ngIf="!isFullScreen"
+        [contents]="contents"
+        [textDuration]="textDuration"
+    ></app-content>
+    <app-footer 
+        [template]="template"
+        [periods]="periods"
+        *ngIf="!isFullScreen"
+    ></app-footer>
+</div>

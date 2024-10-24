@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+.page{
+    height: 100%;
+}
+
+.back-button{
+    width: 100%;
+    height: 100%;
+    font-size: 1.75rem;
+    border: 0px;
+    background-color: #fff;
+}
+
+.title{
+    font-size: 2.5rem;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title>h1{
+    margin-top: 1.5rem;
+    font-size: 2rem;
+}
+
+.setting_section{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input_form, .action_button{
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+
+.scroll {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: rgba(228, 228, 228, 0.847);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: auto;
+}
+
+.dropdown-toggle, .dropdown-menu{ 
+    width: 100%;
+    font-size: 1rem;
+}
+
+
+.dropdown-menu>li{
+    margin-bottom: 0.25rem;
+    margin-left: 0.25rem;
+}
+
+.dropdown-menu>li>button{
+    border: 0px;
+    background-color: transparent;
+}
+
+.dropdown-menu>li:hover { 
+    background: #f1f9fd;
+}

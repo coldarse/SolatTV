@@ -1,0 +1,44 @@
+<div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            Pemberitahuan
+        </h1>
+    </div>
+    <div class="setting_section">
+        <h3 class="col-12">Tempoh</h3>
+        <div class="col-12">
+            <input type="number" class="form-control input_form" [(ngModel)]="duration">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="updateduration()">
+                Update
+            </button>
+        </div>
+    </div>
+    <div class="scroll">
+        <div class="text_container" *ngFor="let item of texts; keyvalue: valueAscOrder; let i = index">
+            <div class="text_content">
+                <input type="text" class="form-control" [disabled]="!item.edit" [(ngModel)]="item.text">
+            </div>
+            <div class="text_actions">
+                <button (click)="editText(i)" *ngIf="!item.edit">
+                    ✎
+                </button>
+                <button (click)="editText(i)" *ngIf="item.edit">
+                    ☓
+                </button>
+                <div class="sequence">
+                    <button [disabled]="i == 0" (click)="upSequence(i)">
+                        △
+                    </button>
+                    <button [disabled]="i == texts.length - 1" (click)="downSequence(i)">
+                        ▽
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

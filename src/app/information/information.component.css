@@ -1,0 +1,41 @@
+.information{
+    background-color: rgba(0, 0, 0, 0.425);
+    color: white;
+    height: 200px;
+}
+
+.banner_container{
+    padding-left: 3rem;
+    padding-top: 1.75rem;
+}
+
+.left_banner{
+    font-size: 2rem;
+    padding-top: 1.75rem;
+    text-align: left;
+}
+
+.right_banner{
+    font-size: 4rem;
+    padding-top: 3rem;
+}
+
+.currtime{
+    text-align: right;
+    padding-right: 3rem;
+    padding-left: 0;
+}
+
+.mosque_name{
+    font-size: 3rem;
+    padding-left: 1rem;
+}
+
+.mosque_info{
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.middle_banner{
+    padding-top: 1rem;
+}

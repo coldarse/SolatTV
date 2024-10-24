@@ -1,0 +1,39 @@
+<div class="container-fluid profile">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            ID Pengguna
+        </h1>
+    </div>
+    <div class="col-12">
+        <button type="button" class="btn btn-default dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="{{selectedLogoURL}}" width="60" height="60" style="border-radius: 0.5rem;">
+            {{selectedLogoName}}
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </button>
+        
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li *ngFor="let logo of logos; let i = index;" (click)="selectedLogo(i)">
+                <a><img src="{{logo.src}}" alt="logo" width="60" height="60" style="border-radius: 0.5rem;">{{logo.file}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="info_section">
+        <h3 class="col-12">Masjid</h3>
+        <input type="text" class="form-control" [(ngModel)]="mosqueprofile.mosque1">
+        <input type="text" class="form-control" [(ngModel)]="mosqueprofile.mosque2">
+    </div>
+    <div class="info_section">
+        <h3 class="col-12">Alamat</h3>
+        <input type="text" class="form-control" [(ngModel)]="mosqueprofile.address">
+    </div>
+    <div class="info_section">
+        <h3 class="col-12">No. Telefon</h3>
+        <input type="text" class="form-control" [(ngModel)]="mosqueprofile.telephone">
+    </div>
+    <div class="info_section">
+        <button class="btn btn-primary action_button" (click)="updateprofile()">Update</button>
+    </div>
+</div>

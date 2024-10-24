@@ -1,0 +1,81 @@
+<div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            Full Skrin
+        </h1>
+    </div>
+    <div class="setting_section">
+        <h3 class="col-12">Tempoh</h3>
+        <div class="col-12">
+            <input type="number" class="form-control input_form" [(ngModel)]="duration">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="updateduration()">
+                Update
+            </button>
+        </div>
+    </div>
+    <div class="setting_section">
+        <div class="selection col-12">
+            <button type="button" class="btn btn-default dropdown-toggle input_form" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{newImage.file}}
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+                
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li *ngFor="let img of available_images; let j = index;">
+                    <a (click)="selectedNewImage(img.src, img.file)"><img src="{{img.src}}" alt="logo" width="120" height="80" style="border-radius: 0.5rem;">&nbsp;{{img.file}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="addNewImage()" [disabled]="newImage.file == ''">
+                Tambah
+            </button>
+        </div>
+        
+    </div>
+    <div class="scroll">
+        <div class="image_container" *ngFor="let item of images; keyvalue: valueAscOrder; let i = index">
+            <!-- <section class="row"> -->
+                <div class="col-12">
+                    <img src="{{item.src}}" alt="bg_img" class="bg-image">
+                </div>
+                <div class="col-12 actions">
+                    <div class="col-12 img_selection">
+                        <button type="button" [disabled]="!item.edit" class="btn btn-default dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{item.file}}
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                            
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li *ngFor="let img of available_images; let j = index;">
+                                <button (click)="selectedImage(i, img.src, img.file)" [disabled]="img.file == item.file"><img src="{{img.src}}" alt="logo" width="120" height="80" style="border-radius: 0.5rem;">&nbsp;{{img.file}}</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="action_row">
+                        <button (click)="editItem(i)" *ngIf="!item.edit" class="col-3">
+                            ✎
+                        </button>
+                        <button (click)="editItem(i)" *ngIf="item.edit" class="col-3">
+                            ◁
+                        </button>
+                        <button (click)="upSequence(i)" [disabled]="i == 0" class="col-3">
+                            △
+                        </button>
+                        <button (click)="downSequence(i)" [disabled]="i == images.length - 1" class="col-3">
+                            ▽
+                        </button>
+                        <button (click)="deleteItem(i)" [disabled]="images.length == 1" class="col-3">
+                            ✖
+                        </button>
+                    </div>
+                </div>
+            <!-- </section> -->
+        </div>
+    </div>
+</div>

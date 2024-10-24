@@ -1,0 +1,48 @@
+<div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            Kalender Islam
+        </h1>
+    </div>
+    <div class="setting_section">
+        <div class="col-12">
+            <input 
+                class="form-control input_form"
+                type="file"
+                id="file"
+                (change)="handleFileInput($event)"
+                accept=".xls,.xlsx"
+            >
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="uploadfile()">
+                Upload
+            </button>
+        </div>
+    </div>
+    <div class="scroll">
+        <table>
+            <tr>
+              <th>Date</th>
+              <th>Subuh</th>
+              <th>Syuruk</th>
+              <th>Zohor</th>
+              <th>Asar</th>
+              <th>Maghrib</th>
+              <th>Isyak</th>
+            </tr>
+            <tr *ngFor="let period of periods">
+              <td>{{period.date}}</td>
+              <td>{{period.fajr}}</td>
+              <td>{{period.syuruq}}</td>
+              <td>{{period.dhuhr}}</td>
+              <td>{{period.asr}}</td>
+              <td>{{period.maghrib}}</td>
+              <td>{{period.isha}}</td>
+            </tr>
+          </table>
+    </div>
+</div>

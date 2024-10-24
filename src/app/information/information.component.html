@@ -1,0 +1,35 @@
+<div class="row information">
+    <div class="col-md-3 banner_container left_banner">
+        <div class="row">
+            {{today_day}}
+        </div>
+        <div class="row">
+            {{today_date}} {{today_month}} {{today_year}}
+        </div>
+        <div class="row">
+            {{islamic_date}}
+        </div>
+    </div>
+    <div class="col-md-6 banner_container">
+        <div class="row middle_banner">
+            <div class="col-md-2">
+                <img src="{{logoURL}}" alt="logo" width="120" height="120" style="border-radius: 0.5rem;">
+            </div>
+            <div class="col-md-10">
+                <div class="row mosque_name">
+                    {{mosque_name}}
+                </div>
+                <div class="row mosque_info">
+                    {{mosque_info}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 banner_container right_banner">
+        <div class="row">
+            <div class="col-md-12 currtime">
+                {{ time_now | date:'mediumTime'}}
+            </div>
+        </div>
+    </div>
+</div>

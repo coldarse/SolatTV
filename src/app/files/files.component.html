@@ -1,0 +1,44 @@
+<div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            File Media
+        </h1>
+    </div>
+    <div class="setting_section">
+        <div class="col-12">
+            <input 
+                class="form-control input_form"
+                type="file"
+                id="file"
+                (change)="handleFileInput($event)"
+            >
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="uploadfile()">
+                Upload
+            </button>
+        </div>
+    </div>
+    <div class="scroll">
+        <div class="file_container col-4" *ngFor="let item of files">
+            <button 
+                class="file" 
+                *ngIf="item.file != ''"
+                style="
+                    background: url('{{item.file}}') no-repeat;
+                    background-size: cover;
+                "
+            >
+            </button>
+            <button 
+                class="file" 
+                *ngIf="item.file == ''"
+            >
+                {{item.title}}
+            </button>
+        </div>
+    </div>
+</div>

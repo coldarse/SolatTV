@@ -1,0 +1,22 @@
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 info_left">
+                {{next_prayer_countdown}}
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 info_right">
+                {{next_event_countdown_in_days}}
+            </div>
+        </div>
+        <app-period *ngIf="template == 1" [periods]="periods"></app-period>
+        <app-information *ngIf="template == 2"></app-information>
+        <div class="row">
+            <div class="col-md-12 scrolling_container">
+                <div class="scrolling_text">
+                    {{current_text}}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

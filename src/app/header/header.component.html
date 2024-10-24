@@ -1,0 +1,6 @@
+<header>
+    <div class="container-fluid">
+        <app-information *ngIf="template == 1"></app-information>
+        <app-period *ngIf="template == 2" [periods]="periods"></app-period>
+    </div>
+</header>

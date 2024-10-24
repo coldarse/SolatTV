@@ -1,0 +1,64 @@
+ <div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            Iqamah
+        </h1>
+    </div>
+    <div class="setting_section">
+        <h3 class="col-12">Tempoh</h3>
+        <div class="col-12">
+            <input type="number" class="form-control input_form" value="{{duration}}">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="updateduration()">
+                Update
+            </button>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="period_container" *ngFor="let period of periods; let i = index;">
+            <div class="col-12">
+                <h3>{{period.name}}</h3>
+            </div>
+            <div class="col-12 division">
+                <input type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="period.checked">
+                <label class="form-check-label" for="flexCheckDefault" style="margin-left: 0.5rem;">
+                    Iqamah pada waktu yang tetap
+                </label>
+            </div>
+            <div class="col-12 cont division">
+                <img src="{{period.src}}" alt="" class="iqamah_img">
+                <div class="overlay"></div>
+                <button type="button" class="btn btn-default dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li *ngFor="let img of available_images; let j = index;">
+                        <button (click)="selectedImage(i, img.src, img.file)" [disabled]="img.file == period.file"><img src="{{img.src}}" alt="logo" width="120" height="80" style="border-radius: 0.5rem;"></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 division">
+                <div class="row">
+                    <div class="col-6">
+                        <label style="font-size: 0.98rem; padding: auto;">Tempoh ke Iqamah</label>
+                    </div>
+                    <div class="col-6">
+                        <select class="form-control" (change)="onDurationChange($event, i)" [(ngModel)]="period.tillIqamah">
+                            <option value="{{item.value}}" *ngFor="let item of tillIqamah">
+                                {{item.text}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 division">
+                <textarea cols="30" rows="3" [(ngModel)]="period.text"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="info_section">
+        <button class="btn btn-primary action_button" (click)="updateiqamah()">Update</button>
+    </div>
+</div>

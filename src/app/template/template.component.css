@@ -1,0 +1,22 @@
+.template_container{
+    width: 100%;
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.template_container>img{
+    width: 100%;
+    height: 12rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.template_name{
+    height: 3rem;
+    background-color: darkgray;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.template_name>h5{
+    padding-top: 0.75rem;
+}

@@ -1,0 +1,31 @@
+<div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            Template Layout
+        </h1>
+    </div>
+    <div class="setting_section">
+        <h3 class="col-12">Template Semasa</h3>
+        <div class="col-12">
+            <input type="text" class="form-control input_form" value="{{template}}" [disabled]="true">
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="template_container" *ngFor="let template of templates" (click)="SelectTemplate(template.name)">
+            <img src="{{template.src}}" alt="template">
+            <div class="template_name text-center">
+                <h5>{{template.name}}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="setting_section">
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="updatetemplate()">
+                Update
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            Masa & Waktu Solat
+        </h1>
+    </div>
+    <div class="time_setting_section">
+        <div class="col-12"> 
+            <div class="row">
+                <h5 class="col-6">Tarikh Server</h5>
+                <h5 class="col-6">Masa Server</h5>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <input type="date" class="form-control input_form" value="{{serverDate}}" [disabled]="true">
+                </div>
+                <div class="col-6">
+                    <input type="time" class="form-control input_form" value="{{serverTime}}" [disabled]="true">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="time_setting_section">
+        <div class="col-12">
+            <div class="row">
+                <h5 class="col-6">Tarikh Telefon</h5>
+                <h5 class="col-6">Masa Telefon</h5>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <input type="date" class="form-control input_form" value="{{deviceDate}}">
+                </div>
+                <div class="col-6">
+                    <input type="time" class="form-control input_form" value="{{deviceTime}}">
+                </div>
+            </div>
+        </div>
+        <div class="col-12" style="margin-top: 0.5rem;">
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary action_button" (click)="update()">
+                        Waktu Segerak Dengan Telefon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

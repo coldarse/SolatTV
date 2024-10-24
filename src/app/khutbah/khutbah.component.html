@@ -1,0 +1,32 @@
+<div class="container-fluid page">
+    <div class="col-12 title">
+        <button class="back-button" (click)="backToMenu()">
+            ≡
+        </button>
+        <h1 class="col-10">
+            Template Layout
+        </h1>
+    </div>
+    <div class="setting_section">
+        <h5 class="col-12">Teks pada tulisan bergerak</h5>
+        <div class="col-12">
+            <textarea cols="30" rows="3" class="form-control input_form" [(ngModel)]="scrollingTexts" [disabled]="!isUpdate"></textarea>
+        </div>
+    </div>
+    <div class="setting_section">
+        <h5 class="col-12">Tulisan pada jumbotron</h5>
+        <div class="col-12">
+            <textarea cols="30" rows="3"class="form-control input_form" [(ngModel)]="jumbotronTexts" [disabled]="!isUpdate"></textarea>
+        </div>
+    </div>
+    <div class="setting_section">
+        <div class="col-12">
+            <button class="btn btn-primary action_button" (click)="updatekhotbah()" *ngIf="!isUpdate">
+                Edit
+            </button>
+            <button class="btn btn-primary action_button" (click)="updatekhotbah()" *ngIf="isUpdate">
+                Update
+            </button>
+        </div>
+    </div>
+</div>

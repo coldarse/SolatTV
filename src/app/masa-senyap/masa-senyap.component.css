@@ -1,0 +1,24 @@
+.silent_img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+
+.division{
+    margin-bottom: 1rem;
+}
+
+.division>textarea{
+    width: 100%;
+}
+
+.period_container{
+    border-bottom: 1px rgba(0, 0, 0, 0.5) solid;
+    margin-bottom: 1rem;
+}
+
+/* .period_container:last-child{
+    border-bottom: 0px;
+    margin-bottom: -1rem;
+} */

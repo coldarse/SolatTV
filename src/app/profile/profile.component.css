@@ -1,0 +1,21 @@
+img{
+    margin: 1rem;
+}
+
+.info_section{
+    margin-top: 2rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+.info_section>input{
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+
